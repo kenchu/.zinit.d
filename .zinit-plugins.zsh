@@ -43,13 +43,19 @@ zinit wait lucid for \
 zinit wait="1" lucid from="gh-r" as="null" for \
       sbin="**/bat"       @sharkdp/bat \
       sbin="**/fd"        @sharkdp/fd \
-      sbin="exa* -> exa"  ogham/exa \
-      sbin="direnv* -> direnv" direnv/direnv
+      sbin="exa* -> exa"  ogham/exa
 
-# zinit wait="1" as="program" \
-#       make='!' atclone='./direnv hook zsh > zhook.zsh' \
-#       atpull='%atclone' pick="direnv" src="zhook.zsh" for \
+# exa alias
+zinit for DarrinTisdale/zsh-aliases-exa
+
+# zinit as="program" make="!" atclone="./direnv hook zsh > zhook.zsh" \
+#       atpull="%atclone" pick="direnv" src="zhook.zsh" for \
 #       direnv/direnv
+
+zinit from="gh-r" as="program" mv="direnv* -> direnv" \
+      atclone="./direnv hook zsh > zhook.zsh" atpull="%atclone" \
+      pick="direnv" src="zhook.zsh" for \
+      direnv/direnv
 
 zinit svn for \
       PZT::modules/utility \
