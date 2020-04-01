@@ -65,13 +65,15 @@ zinit svn for \
       PZT::modules/git \
       OMZ::plugins/tmux
 
+zinit wait="1" lucid svn for \
+      OMZ::plugins/ansible \
+      OMZ::plugins/colored-man-pages
 
 # Container Tools
 zinit wait="1" lucid svn for \
       PZT::modules/docker \
-      OMZ::plugins/kubectl \
-      OMZ::plugins/ansible \
-      OMZ::plugins/colored-man-pages
+      OMZ::plugins/docker-compose \
+      OMZ::plugins/kubectl
 
 
 # -----------------------------
