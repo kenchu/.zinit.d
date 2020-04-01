@@ -73,14 +73,15 @@ zinit wait="1" lucid svn for \
       OMZ::plugins/ansible \
       OMZ::plugins/colored-man-pages
 
-zinit wait="2" svn for \
-      PZT::modules/python \
-      PZT::modules/ruby \
-      PZT::modules/node
 
 # -----------------------------
 # programming languages related
 # -----------------------------
+
+zinit wait="1" svn for \
+      PZT::modules/python \
+      PZT::modules/ruby \
+      PZT::modules/node
 
 # Installation of Rust compiler environment via the z-a-rust annex
 zinit wait lucid as="null" id-as="rust" sbin="bin/*" rustup \
