@@ -57,7 +57,6 @@ zinit svn for \
       PZT::modules/directory \
       PZT::modules/osx \
       PZT::modules/git \
-      OMZ::plugins/history-substring-search \
       OMZ::plugins/tmux
 
 
