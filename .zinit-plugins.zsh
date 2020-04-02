@@ -122,3 +122,17 @@ zinit id-as='normal-prompt' nocd lucid \
       load='![[ $PWD != */zinit.git(|/*) ]]' \
       atload='!source ~/.p10k.zsh; _p9k_precmd' for \
       zdharma/null
+# ogham/exa also uses the definitions
+zinit ice wait="0" lucid reset \
+      atclone="local P=${${(M)OSTYPE:#*darwin*}:+g}
+            \${P}sed -i \
+            '/DIR/c\DIR 38;5;63;1' LS_COLORS; \
+            \${P}dircolors -b LS_COLORS > c.zsh" \
+            atpull='%atclone' pick="c.zsh" nocompile='!' \
+            atload='zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
+zinit light trapd00r/LS_COLORS
+
+# zinit ice atclone"gdircolors -b LS_COLORS > clrs.zsh" \
+#       atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+#       atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
+# zinit light trapd00r/LS_COLORS
