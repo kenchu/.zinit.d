@@ -15,8 +15,7 @@ zinit wait lucid for \
       atload="!_zsh_autosuggest_start" \
       zsh-users/zsh-autosuggestions
 
-zinit for \
-      zsh-users/zsh-history-substring-search
+zinit for zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
