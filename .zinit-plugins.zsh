@@ -17,7 +17,6 @@ zinit wait lucid for \
 
 zinit for \
       zsh-users/zsh-history-substring-search
-
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
@@ -30,14 +29,14 @@ zinit wait lucid for \
 zinit wait lucid for \
       make="PREFIX=$ZPFX install" \
       sbin="fasd" clvv/fasd \
-      svn OMZ::plugins/fasd
+      svn OMZP::fasd
 
 # fzf, fzy, fzf-marks
 zinit pack="bgn+keys" git for fzf
 # zinit pack="bgn" git for fzy
 zinit wait lucid for \
       urbainvaes/fzf-marks \
-      svn OMZ::plugins/zsh-interactive-cd
+      svn OMZP::zsh-interactive-cd
 
 # bat, fd, exa
 zinit wait="1" lucid from="gh-r" as="null" for \
@@ -58,22 +57,23 @@ zinit from="gh-r" as="program" mv="direnv* -> direnv" \
       direnv/direnv
 
 zinit svn for \
-      PZT::modules/utility \
-      PZT::modules/completion \
-      PZT::modules/directory \
-      PZT::modules/osx \
-      PZT::modules/git \
-      OMZ::plugins/tmux
+      PZTM::utility \
+      PZTM::completion \
+      PZTM::directory \
+      PZTM::git \
+      PZTM::osx \
+      PZTM::homebrew \
+      OMZP::tmux
 
 zinit wait="1" lucid svn for \
-      OMZ::plugins/ansible \
-      OMZ::plugins/colored-man-pages
+      OMZP::ansible \
+      OMZP::colored-man-pages
 
 # Container Tools
 zinit wait="1" lucid svn for \
-      PZT::modules/docker \
-      OMZ::plugins/docker-compose \
-      OMZ::plugins/kubectl
+      PZTM::docker \
+      OMZP::docker-compose \
+      OMZP::kubectl
 
 
 # -----------------------------
@@ -81,9 +81,9 @@ zinit wait="1" lucid svn for \
 # -----------------------------
 
 zinit wait="1" svn for \
-      PZT::modules/python \
-      PZT::modules/ruby \
-      PZT::modules/node
+      PZTM::python \
+      PZTM::ruby \
+      PZTM::node
 
 # Installation of Rust compiler environment via the z-a-rust annex
 zinit wait lucid as="null" id-as="rust" sbin="bin/*" rustup \
