@@ -74,6 +74,10 @@ zinit wait="1" lucid svn for \
       OMZP::docker-compose \
       OMZP::kubectl
 
+# applications
+zinit wait="1" lucid svn for \
+      OMZP::forklift
+
 
 # -----------------------------
 # programming languages related
