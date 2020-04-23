@@ -78,6 +78,8 @@ zinit wait="1" lucid svn for \
 zinit wait="1" lucid svn for \
       OMZP::forklift
 
+zinit ice as"completion"
+zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
 
 # -----------------------------
 # programming languages related
