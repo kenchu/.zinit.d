@@ -66,7 +66,8 @@ zinit svn for \
 
 zinit wait="1" lucid svn for \
       OMZP::ansible \
-      OMZP::colored-man-pages
+      OMZP::colored-man-pages \
+      OMZP::urltools
 
 # Container Tools
 zinit wait="1" lucid svn for \
