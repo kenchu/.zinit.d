@@ -116,31 +116,3 @@ zinit wait pack="bgn" git for pyenv
 # Load within zshrc – for the instant prompt
 zinit ice nocd lucid atload='!source ~/.p10k.zsh'
 zinit load romkatv/powerlevel10k
-
-# Load ~/.p10k_zinit.zsh when in ~/github/zinit.git
-zinit id-as='zinit-prompt' nocd lucid \
-      unload='[[ $PWD != */zinit.git(|/*) ]]' \
-      load='![[ $PWD = */zinit.git(|/*) ]]' \
-      atload='!source ~/.p10k_lean.zsh; _p9k_precmd' for \
-      zdharma/null
-
-# Load ~/.p10k.zsh when in any other directory
-zinit id-as='normal-prompt' nocd lucid \
-      unload='[[ $PWD = */zinit.git(|/*) ]]' \
-      load='![[ $PWD != */zinit.git(|/*) ]]' \
-      atload='!source ~/.p10k.zsh; _p9k_precmd' for \
-      zdharma/null
-# ogham/exa also uses the definitions
-zinit ice wait="0" lucid reset \
-      atclone="local P=${${(M)OSTYPE:#*darwin*}:+g}
-            \${P}sed -i \
-            '/DIR/c\DIR 38;5;63;1' LS_COLORS; \
-            \${P}dircolors -b LS_COLORS > c.zsh" \
-            atpull='%atclone' pick="c.zsh" nocompile='!' \
-            atload='zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
-zinit light trapd00r/LS_COLORS
-
-# zinit ice atclone"gdircolors -b LS_COLORS > clrs.zsh" \
-#       atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-#       atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-# zinit light trapd00r/LS_COLORS
